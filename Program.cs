@@ -26,5 +26,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Create}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=User}/{action=List}/{id?}");
 
 app.Run();

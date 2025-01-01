@@ -1,0 +1,30 @@
+@model List<User>
+@{
+    ViewData["Title"] = "List of User";
+}
+<div class="container mt-5">
+    <h2 class="mb-4">User List</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach(var user in Model)
+           {
+               <tr>
+                   <td>@user.Id</td>
+                   <td>@user.Name</td>
+                   <td>@user.Email</td>
+                   <td>@user.Mobile</td>
+                   <td><a asp-action="Details" asp-route-id="@user.Id">Details</a></td>
+               </tr>
+           }
+        </tbody>
+    </table>
+</div>
